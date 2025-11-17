@@ -60,9 +60,8 @@ extern "C" {
         if (R_FAILED(rc))
             fatalThrow(rc);
 
+        // Socket setup fixed work with new libx v4.10.0- bsdsockets_version removed
         SocketInitConfig sockConf = {
-            .bsdsockets_version = 1,
-
             .tcp_tx_buf_size = 0x800,
             .tcp_rx_buf_size = 0x1000,
             .tcp_tx_buf_max_size = 0x2EE0,
